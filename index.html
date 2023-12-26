@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book E-me</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- 1- display all books -->
+        <header class="header">
+    <nav class="navigateur">
+        <button id="dis" onclick="displayData()"> Display all books </button>
+        <ul id="maListe">
+            <li>Book Title 1</li>
+            <li>Book Title 2</li>
+            <li>Book Title 3</li>
+            <li>Book Title 4</li>
+        </ul>
+        
+        <!-- 2- add book -->
+        <form id="mybookadded">
+            <legend>Add/Remove your Book</legend>
+            <input type="text" name="BookName" id="BookName" placeholder=" book name...">
+               <button class="button-container" type="add" id="add">Add</button>
+            
+         </form>
+         <ul id="maListe"></ul>
+         <!-- 3- Remove book -->
+    <button type="button" class="button-container" id="removeLast">Remove</button>
+
+    </nav>
+        <div class="content">
+            <h1>Welcome to My Bookstore</h1>
+            <p>Find your favorite Book</p>
+        </div>
+        <!-- 4- search book -->
+<div class="Search">
+    <input type="text" id="search1" placeholder="search...">
+    <button type="submit" id="searchButton">Go</button>
+<ul id="mybooklist">
+    <li><a href="#">Book Title 1</a></li>
+    <li><a href="#">Book Title 2</a></li>
+    <li><a href="#">Book Title 3</a></li>
+    <li><a href="#">Book Title 4</a></li>
+</ul>
+</div>
+</header>
+<!-- 5- book representation -->
+    <div class="main-content">
+        <div class="books">
+            <div class="book">
+                <img src="./images/naturebook.jpg">
+                <h3>Book Title 1</h3>
+                <p>Author Name</p>
+                <p>Category: NatureBooks friends</p>
+                <p>20.55 TND</p>
+            </div>
+            <div class="book">
+                <img src="actionbook.jpg">
+                <h3>Book Title 2</h3>
+                <p>Author Name</p>
+                <p>Category: ActionBooks friends</p>
+                <p>39.20 TND</p>
+            </div>
+            <div class="book">
+                <img src="dramabook.jpg">
+                <h3>Book Title 3</h3>
+                <p>Author Name</p>
+                <p>Category: DramaBooks friends</p>
+                <p>40.10 TND</p>
+            </div>
+            <div class="book">
+                <img src="cookbook.jpg">
+                <h3>Book Title 4</h3>
+                <p>Author Name</p>
+                <p>Category: CookBooks friends</p>
+                <p>15.00 TND</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+
+</html>
