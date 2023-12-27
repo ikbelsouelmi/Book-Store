@@ -1,65 +1,65 @@
+//1-display Book list
 
-//1-function displat
-function displayBookList() {
-    var bookListElement = document.getElementById("myList");
-
-    // Clear existing content
-    bookListElement.innerHTML = "";
-
-    // Loop through the books and create list items
-    books.forEach(function(book) {
-      var listItem = document.createElement("li");
-      bookListElement.appendChild(listItem);
-    });
-  }
-//2-Add book function
-function AddBook() {
-    var bookList = document.getElementById("myList");
-// Create a new list item for the book
-    var newBook = document.createElement("li");
-    newBook.textContent = "New Book";
-    // Add the new book to the list
-    bookList.appendChild(newBook);
-}
-//3-remove book function
-function Remove() {
-    // Select the list of book elements
-    var bookList = document.getElementById("myList");
-
-    // Check if there are any child elements in the list
-    if (bookList.children.length > 0) {
-        // Remove the last child element from the list
-        bookList.removeChild(bookList.lastChild);
-    } else {
-        alert("The list of books is empty.");
+function DisplayList (){
+    if (bookListElement.style.display === 'none') {
+        bookListElement.style.display = 'block';
+      } else {
+        bookListElement.style.display = 'none';
+      }
+    };
+const bookListElement = document.getElementById('myList');
+            const toggleListButton = document.getElementById('displaybook');
+        
+//2- Add Book to list
+function AddBook (){
+     $(document).ready(function () {
+     $("#myList").append("<li><strong>" + BookName + "</strong></li>")
+    })
+     $("#mybookadded").submit(function () {
+              
+                       // Récupérer les valeurs du formulaire
+    var BookName = $("#BookName").val();
+              
+                       ;  
+                    });
+                 }
+//3-Remove book from list
+function removeLast() {
+     var listItems = $("#myList li");
+    if (listItems.length > 0) {
+    listItems.last().remove();
     }
-}
-//4-search function
+    }
 
-var myArray = [
-    { namebook: 'book title 1' },
-    { namebook: 'book title 2' },
-    { namebook: 'book title 3' },
-    { namebook: 'book title 4' }
-];
+$(document).ready(function () {
+    $("#mybookadded").submit(function (event) {
+        event.preventDefault();
 
-// Search for an object with a specific property value
-function filter(array, predicate) {
-    var result = [];
-    array.forEach(function (element) {
-        if (predicate(element)) {
-            result.push(element);
+        var BookName = $("#BookName").val();
+
+        if (BookName.trim() !== "") {
+            $("#myList").append("<li><strong>" + BookName + "</strong></li>");
         }
     });
-    return result;
-}
-
-var result = filter(myArray, function (element) {
-    return element.namebook === 'book title 2';///////////////////
 });
-if (result.length > 0) {
-    console.log("Element found:", result);
-} else {
-    console.log("Element not found");
-}
 
+//4-search book in list
+function SearchBook() {
+    var filter = $("#search1").val().toUpperCase();
+    var bookList = $("#mybooklist");
+    var books = bookList.find("li");
+
+    books.each(function () {
+      var title = $(this).find("a").text().toUpperCase();
+      $(this).css("display", title.includes(filter) ? "" : "none");
+    });
+  }
+  $(document).ready(function () {
+    $("#searchButton").on("click", SearchBook);
+  
+    
+  });
+  
+
+
+    
