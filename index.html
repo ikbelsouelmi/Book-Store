@@ -12,25 +12,73 @@
     <!-- 1- display all books -->
         <header class="header">
     <nav class="navigateur">
-        <button id="dis" onclick="displayData()"> Display all books </button>
-        <ul id="maListe">
+        <button id="displaybook">Display Book List</button>
+        <ul id="myList">
             <li>Book Title 1</li>
             <li>Book Title 2</li>
             <li>Book Title 3</li>
             <li>Book Title 4</li>
         </ul>
+        <script>
+            const bookListElement = document.getElementById('myList');
+            const toggleListButton = document.getElementById('displaybook');
         
+            // Ajoutez un gestionnaire d'événements au bouton pour basculer l'état de la liste
+            toggleListButton.addEventListener('click', () => {
+              // la visibilité de la liste
+              if (bookListElement.style.display === 'none') {
+                bookListElement.style.display = 'block';
+              } else {
+                bookListElement.style.display = 'none';
+              }
+            });
+          </script>
+
         <!-- 2- add book -->
         <form id="mybookadded">
             <legend>Add/Remove your Book</legend>
             <input type="text" name="BookName" id="BookName" placeholder=" book name...">
                <button class="button-container" type="add" id="add">Add</button>
-            
-         </form>
-         <ul id="maListe"></ul>
-         <!-- 3- Remove book -->
-    <button type="button" class="button-container" id="removeLast">Remove</button>
-
+             </form>
+             <ul id="myList"></ul>
+             <script>
+                $(document).ready(function () {
+                   $("#mybookadded").submit(function () {
+             
+                      // Récupérer les valeurs du formulaire
+                      var BookName = $("#BookName").val();
+             
+                      // Ajouter un nouvel élément à la liste
+                      $("#myList").append("<li><strong>" + BookName + "</strong></li>");  
+                   });
+                });
+             </script>
+             
+     
+    <!-- 3- remove book -->
+        <button type="button" class="button-container" id="removeLast" onclick="Remove ()">Remove</button>
+        <script>
+            $(document).ready(function () {
+                $("#mybookadded").submit(function (event) {
+                    event.preventDefault();
+    
+                    var BookName = $("#BookName").val();
+    
+                    if (BookName.trim() !== "") {
+                        $("#myList").append("<li><strong>" + BookName + "</strong></li>");
+                    }
+                });
+            });
+    
+            function removeLast() {
+                var listItems = $("#myList li");
+                if (listItems.length > 0) {
+                    listItems.last().remove();
+                }
+            }
+        </script>
+        
+    
     </nav>
         <div class="content">
             <h1>Welcome to My Bookstore</h1>
@@ -46,7 +94,27 @@
     <li><a href="#">Book Title 3</a></li>
     <li><a href="#">Book Title 4</a></li>
 </ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("searchButton").addEventListener("click", SearchBook);
+
+    function SearchBook() {
+        var filter = document.getElementById("search1").value.toUpperCase();
+        var bookList = document.getElementById("mybooklist");
+        var books = bookList.getElementsByTagName("li");
+
+        Array.from(books).forEach(function(book) {
+            var title = book.querySelector("a").textContent.toUpperCase();
+            book.style.display = title.includes(filter) ? "" : "none";
+        });
+    }
+});
+
+</script>
 </div>
+
+</script>
 </header>
 <!-- 5- book representation -->
     <div class="main-content">
@@ -59,21 +127,21 @@
                 <p>20.55 TND</p>
             </div>
             <div class="book">
-                <img src="actionbook.jpg">
+                <img src="./images/actionbook.jpg">
                 <h3>Book Title 2</h3>
                 <p>Author Name</p>
                 <p>Category: ActionBooks friends</p>
                 <p>39.20 TND</p>
             </div>
             <div class="book">
-                <img src="dramabook.jpg">
+                <img src="./images/dramabook.jpg">
                 <h3>Book Title 3</h3>
                 <p>Author Name</p>
                 <p>Category: DramaBooks friends</p>
                 <p>40.10 TND</p>
             </div>
             <div class="book">
-                <img src="cookbook.jpg">
+                <img src="./images/cookbook.jpg">
                 <h3>Book Title 4</h3>
                 <p>Author Name</p>
                 <p>Category: CookBooks friends</p>
