@@ -15,14 +15,10 @@ function AddBook (){
      $(document).ready(function () {
      $("#myList").append("<li><strong>" + BookName + "</strong></li>")
     })
-     $("#mybookadded").submit(function () {
-              
-                       // Récupérer les valeurs du formulaire
-    var BookName = $("#BookName").val();
-              
+    
                        ;  
-                    });
-                 }
+                };
+                 
 //3-Remove book from list
 function removeLast() {
      var listItems = $("#myList li");
@@ -34,15 +30,12 @@ function removeLast() {
 $(document).ready(function () {
     $("#mybookadded").submit(function (event) {
         event.preventDefault();
-
         var BookName = $("#BookName").val();
-
         if (BookName.trim() !== "") {
             $("#myList").append("<li><strong>" + BookName + "</strong></li>");
         }
     });
 });
-
 //4-search book in list
 function SearchBook() {
     var filter = $("#search1").val().toUpperCase();
@@ -51,13 +44,12 @@ function SearchBook() {
 
     books.each(function () {
       var title = $(this).find("a").text().toUpperCase();
-      $(this).css("display", title.includes(filter) ? "" : "none");
+      $(this).toggle(title.includes(filter));;
     });
   }
   $(document).ready(function () {
     $("#searchButton").on("click", SearchBook);
-  
-    
+ 
   });
   
 

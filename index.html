@@ -9,15 +9,64 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="content">
+        <h1>Welcome to My Bookstore</h1>
+        <p>Find your favorite Book</p>
+    </div>
+    <!-- 4- search book -->
+<div class="Search22">
+    <input type="text" id="search1" placeholder="search...">
+    <button type="submit" id="searchButton" onclick="SearchBook ()" class="Search21">Go</button>
+<ul id="mybooklist">
+    <li><a >My first Book of Nature</a></li>
+    <li><a >Dragon wars</a></li>
+    <li><a>Drama</a></li>
+    <li><a >The complete cookbook for young chef </a></li>
+</ul>
+</div>
+    <!-- 5- book representation -->
+    <div class="main-content">
+        <div class="books">
+            <div class="book">
+                <img src="./images/naturebook.jpg">
+                <h3>My first Book of Nature</h3>
+                <p1>Author Name</p1>
+                <p2>Category: NatureBooks friends</p2>
+                <p3>20.55 TND</p3>
+            </div>
+            <div class="book">
+                <img src="./images/actionbook.jpg">
+                <h3>Dragon wars</h3>
+                <p1>Author Name</p1>
+                <p2>Category: ActionBooks friends</p2>
+                <p3>39.20 TND</p3>
+            </div>
+            <div class="book">
+                <img src="./images/dramabook.jpg">
+                <h3>Drama3</h3>
+                <p1>Author Name</p1>
+                <p2>Category: DramaBooks friends</p2>
+                <p3>40.10 TND</p3>
+            </div>
+            <div class="book">
+                <img src="./images/cookbook.jpg">
+                <h3>The complete cookbook for young chef</h3>
+                <p1>Author Name</p1>
+                <p2>Category: CookBooks friends</p2>
+                <p3>15.00 TND</p3>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- 1- display all books -->
         <header class="header">
     <nav class="navigateur">
         <button id="displaybook" onclick="DisplayList ()">Display Book List</button>
         <ul id="myList">
-            <li>Book Title 1</li>
-            <li>Book Title 2</li>
-            <li>Book Title 3</li>
-            <li>Book Title 4</li>
+            <li>My first Book of Nature</li>
+            <li>Dragon wars</li>
+            <li>Drama</li>
+            <li>The complete cookbook for young chef </li>
         </ul>
         
 
@@ -32,57 +81,11 @@
     <!-- 3- remove book -->
         <button type="button" class="button-container" id="removeLast" onclick="removeLast()">Remove</button>
     </nav>
-        <div class="content">
-            <h1>Welcome to My Bookstore</h1>
-            <p>Find your favorite Book</p>
-        </div>
-        <!-- 4- search book -->
-<div class="Search">
-    <input type="text" id="search1" placeholder="search...">
-    <button type="submit" id="searchButton" onclick="SearchBook ()">Go</button>
-<ul id="mybooklist">
-    <li><a href="#">Book Title 1</a></li>
-    <li><a href="#">Book Title 2</a></li>
-    <li><a href="#">Book Title 3</a></li>
-    <li><a href="#">Book Title 4</a></li>
-</ul>
-</div>
+        
+        
 </script>
 </header>
-<!-- 5- book representation -->
-    <div class="main-content">
-        <div class="books">
-            <div class="book">
-                <img src="./images/naturebook.jpg">
-                <h3>Book Title 1</h3>
-                <p>Author Name</p>
-                <p>Category: NatureBooks friends</p>
-                <p>20.55 TND</p>
-            </div>
-            <div class="book">
-                <img src="./images/actionbook.jpg">
-                <h3>Book Title 2</h3>
-                <p>Author Name</p>
-                <p>Category: ActionBooks friends</p>
-                <p>39.20 TND</p>
-            </div>
-            <div class="book">
-                <img src="./images/dramabook.jpg">
-                <h3>Book Title 3</h3>
-                <p>Author Name</p>
-                <p>Category: DramaBooks friends</p>
-                <p>40.10 TND</p>
-            </div>
-            <div class="book">
-                <img src="./images/cookbook.jpg">
-                <h3>Book Title 4</h3>
-                <p>Author Name</p>
-                <p>Category: CookBooks friends</p>
-                <p>15.00 TND</p>
-            </div>
-        </div>
-    </div>
-</div>
+
 <script src="index.js"></script>
 </body>
 
